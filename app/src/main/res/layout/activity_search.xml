@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:padding="@dimen/dimens_16dp"
+            app:tint="@color/title"
             app:srcCompat="@drawable/ic_back" />
 
         <androidx.appcompat.widget.SearchView
@@ -26,7 +27,7 @@
             android:layout_toEndOf="@id/iv_back"
             app:iconifiedByDefault="false"
             app:queryBackground="@null"
-            app:queryHint="Search here"
+            app:queryHint="@string/hint_search"
             app:searchIcon="@null" />
 
     </RelativeLayout>
@@ -34,7 +35,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray" />
+        android:background="@color/line" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested_scroll_view"

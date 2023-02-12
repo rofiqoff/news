@@ -11,4 +11,8 @@
     <color name="blue">#487EE7</color>
 
     <color name="text_default">#B9B6B8</color>
+
+    <color name="title">#FF000000</color>
+    <color name="background">#FFFFFFFF</color>
+    <color name="line">#EFF5F5</color>
 </resources>

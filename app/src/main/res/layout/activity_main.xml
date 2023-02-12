@@ -17,7 +17,7 @@
             android:layout_toStartOf="@id/iv_search"
             android:padding="16dp"
             android:text="@string/app_name"
-            android:textColor="@color/black"
+            android:textColor="@color/title"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -28,14 +28,15 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:padding="@dimen/dimens_16dp"
-            app:srcCompat="@drawable/ic_search" />
+            app:srcCompat="@drawable/ic_search"
+            app:tint="@color/title" />
 
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray" />
+        android:background="@color/line" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
@@ -66,7 +67,7 @@
                         android:paddingHorizontal="@dimen/dimens_16dp"
                         android:paddingTop="10dp"
                         android:text="@string/label_title_headline"
-                        android:textColor="@color/black"
+                        android:textColor="@color/title"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -96,7 +97,7 @@
                     android:id="@+id/rv_category"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:background="@color/background"
                     android:nestedScrollingEnabled="false"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -110,7 +111,7 @@
                         android:id="@+id/rv_source"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/white"
+                        android:background="@color/background"
                         android:nestedScrollingEnabled="false"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         tools:listitem="@layout/item_source" />

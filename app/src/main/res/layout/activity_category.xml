@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:padding="@dimen/dimens_16dp"
+            app:tint="@color/title"
             app:srcCompat="@drawable/ic_back" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -28,7 +29,7 @@
             android:gravity="center"
             android:lines="1"
             android:padding="16dp"
-            android:textColor="@color/black"
+            android:textColor="@color/title"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:text="@string/app_name" />
@@ -40,6 +41,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:padding="@dimen/dimens_16dp"
+            app:tint="@color/title"
             app:srcCompat="@drawable/ic_search" />
 
     </RelativeLayout>
@@ -47,7 +49,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray" />
+        android:background="@color/line" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"

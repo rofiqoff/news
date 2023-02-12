@@ -2,4 +2,5 @@
     <string name="app_name">News App</string>
     <string name="label_title_headline">Headline In Indonesia</string>
     <string name="label_no_data">Tidak ada data yang ditampilkan</string>
+    <string name="hint_search">Type here</string>
 </resources>
