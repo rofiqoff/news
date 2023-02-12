@@ -13,7 +13,7 @@ import com.rofiqoff.news.data.api.model.Article
 import com.rofiqoff.news.databinding.ActivityCategoryBinding
 import com.rofiqoff.news.ui.base.BaseActivity
 import com.rofiqoff.news.ui.detail.DetailActivity
-import com.rofiqoff.news.ui.main.adapter.ArticleAdapter
+import com.rofiqoff.news.ui.common.adapter.ArticleAdapter
 import com.rofiqoff.news.utils.LinearItemDecoration
 import com.rofiqoff.news.utils.getDimensInt
 import com.rofiqoff.news.utils.invisible

@@ -1,4 +1,4 @@
-package com.rofiqoff.news.ui.main.adapter
+package com.rofiqoff.news.ui.common.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

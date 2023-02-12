@@ -14,8 +14,8 @@ import com.rofiqoff.news.databinding.ActivityMainBinding
 import com.rofiqoff.news.ui.base.BaseActivity
 import com.rofiqoff.news.ui.category.CategoryActivity
 import com.rofiqoff.news.ui.detail.DetailActivity
-import com.rofiqoff.news.ui.main.adapter.ArticleAdapter
-import com.rofiqoff.news.ui.main.adapter.ArticleAdapter.Companion.ITEM_TYPE_HORIZONTAL
+import com.rofiqoff.news.ui.common.adapter.ArticleAdapter
+import com.rofiqoff.news.ui.common.adapter.ArticleAdapter.Companion.ITEM_TYPE_HORIZONTAL
 import com.rofiqoff.news.ui.main.adapter.CategoryAdapter
 import com.rofiqoff.news.ui.main.adapter.SourceAdapter
 import com.rofiqoff.news.utils.LinearItemDecoration
