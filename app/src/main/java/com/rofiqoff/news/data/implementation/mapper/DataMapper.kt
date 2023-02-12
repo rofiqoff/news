@@ -8,9 +8,11 @@ import com.rofiqoff.news.data.implementation.remote.response.SourceResponse
 fun SourceResponse?.toSource() = Source(
     id = this?.id.orEmpty(),
     name = this?.name.orEmpty(),
+    category = this?.category.orEmpty(),
+    description = this?.description.orEmpty()
 )
 
-fun ArticleResponse.toArticle() = Article(
+fun ArticleResponse.toArticle(totalCount: Int) = Article(
     source = this.source.toSource(),
     author = this.author.orEmpty(),
     title = this.title.orEmpty(),
@@ -19,4 +21,5 @@ fun ArticleResponse.toArticle() = Article(
     urlToImage = urlToImage.orEmpty(),
     publishedAt = this.publishedAt.orEmpty(),
     content = this.content.orEmpty(),
+    totalCount = totalCount
 )

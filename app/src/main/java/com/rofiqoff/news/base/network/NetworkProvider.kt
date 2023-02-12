@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit
 
 class NetworkProvider(
     private val url: String,
+    private val apiKey: String,
 ) {
 
     fun createRetrofit(): Retrofit {
@@ -35,7 +36,7 @@ class NetworkProvider(
                 val request = chain
                     .request()
                     .newBuilder()
-                    .addHeader("Authorization", "a3d286135e834c6db3843138b1388219")
+                    .addHeader("Authorization", apiKey)
                     .build()
                 chain.proceed(request)
             }

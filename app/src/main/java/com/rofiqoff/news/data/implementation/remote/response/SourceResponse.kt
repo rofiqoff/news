@@ -7,4 +7,8 @@ data class SourceResponse(
     val id: String?,
     @SerializedName("name")
     val name: String?,
+    @SerializedName("category")
+    val category: String?,
+    @SerializedName("description")
+    val description: String?,
 )

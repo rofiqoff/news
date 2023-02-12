@@ -6,4 +6,6 @@ object NetworkUtils {
 
     fun getBaseUrl() = BuildConfig.BASE_URL
 
+    fun getApiKey() = BuildConfig.API_KEY
+
 }

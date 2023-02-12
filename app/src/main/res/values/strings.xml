@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">news</string>
+    <string name="app_name">News App</string>
+    <string name="label_title_headline">Headline In Indonesia</string>
 </resources>

@@ -14,7 +14,10 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideNetworkProvider(): NetworkProvider {
-        return NetworkProvider(NetworkUtils.getBaseUrl())
+        return NetworkProvider(
+            NetworkUtils.getBaseUrl(),
+            NetworkUtils.getApiKey()
+        )
     }
 
     @Singleton
