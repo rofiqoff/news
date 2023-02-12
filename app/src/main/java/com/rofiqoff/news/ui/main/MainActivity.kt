@@ -13,11 +13,12 @@ import com.rofiqoff.news.data.api.model.Source
 import com.rofiqoff.news.databinding.ActivityMainBinding
 import com.rofiqoff.news.ui.base.BaseActivity
 import com.rofiqoff.news.ui.category.CategoryActivity
-import com.rofiqoff.news.ui.detail.DetailActivity
 import com.rofiqoff.news.ui.common.adapter.ArticleAdapter
 import com.rofiqoff.news.ui.common.adapter.ArticleAdapter.Companion.ITEM_TYPE_HORIZONTAL
+import com.rofiqoff.news.ui.detail.DetailActivity
 import com.rofiqoff.news.ui.main.adapter.CategoryAdapter
 import com.rofiqoff.news.ui.main.adapter.SourceAdapter
+import com.rofiqoff.news.ui.search.SearchActivity
 import com.rofiqoff.news.utils.LinearItemDecoration
 import com.rofiqoff.news.utils.getDimensInt
 import com.rofiqoff.news.utils.invisible
@@ -65,6 +66,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 request()
             }
         }
+
+        binding.ivSearch.setOnClickListener { navigateToSearch() }
     }
 
     private fun initList() = with(binding) {
@@ -180,6 +183,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         Intent(this, DetailActivity::class.java).apply {
             putExtra(DetailActivity.PARAM_URL, article.url)
         }.also { startActivity(it) }
+    }
+
+    private fun navigateToSearch() {
+        Intent(this, SearchActivity::class.java).also { startActivity(it) }
     }
 
 }
