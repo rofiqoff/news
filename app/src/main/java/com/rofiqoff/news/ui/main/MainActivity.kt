@@ -13,6 +13,7 @@ import com.rofiqoff.news.data.api.model.Source
 import com.rofiqoff.news.databinding.ActivityMainBinding
 import com.rofiqoff.news.ui.base.BaseActivity
 import com.rofiqoff.news.ui.category.CategoryActivity
+import com.rofiqoff.news.ui.detail.DetailActivity
 import com.rofiqoff.news.ui.main.adapter.ArticleAdapter
 import com.rofiqoff.news.ui.main.adapter.ArticleAdapter.Companion.ITEM_TYPE_HORIZONTAL
 import com.rofiqoff.news.ui.main.adapter.CategoryAdapter
@@ -31,7 +32,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val headlineAdapter by lazy {
         ArticleAdapter(ITEM_TYPE_HORIZONTAL) {
-            navigateToDetailPage()
+            navigateToDetailPage(it)
         }
     }
 
@@ -175,8 +176,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }.also { startActivity(it) }
     }
 
-    private fun navigateToDetailPage() {
-
+    private fun navigateToDetailPage(article: Article) {
+        Intent(this, DetailActivity::class.java).apply {
+            putExtra(DetailActivity.PARAM_URL, article.url)
+        }.also { startActivity(it) }
     }
 
 }

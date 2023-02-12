@@ -36,8 +36,6 @@ fun getWidthOfScreen(): Int = Resources.getSystem().displayMetrics.widthPixels
 
 fun Int?.orNull(defaultNull: Int = 0): Int = this ?: defaultNull
 
-//2023-02-11T09:05:45Z
-
 fun String?.toDateFormat(
     context: Context,
     inputFormat: String = "yyyy-MM-dd'T'HH:mm:ss",
@@ -71,6 +69,10 @@ fun View.visible() {
 
 fun View.invisible() {
     visibility = View.INVISIBLE
+}
+
+fun View.gone() {
+    visibility = View.GONE
 }
 
 fun <T> RecyclerView.Adapter<*>.autoNotify(
