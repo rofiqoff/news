@@ -8,12 +8,16 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_category"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_category"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@color/blue"
-        app:shapeAppearanceOverlay="@style/RoundedImage24dp" />
+        android:background="@drawable/bg_circle_selected_blue"
+        android:gravity="center"
+        android:textColor="@color/color_selected_blac_white"
+        android:textSize="16sp"
+        app:shapeAppearanceOverlay="@style/RoundedImage24dp"
+        tools:text="A" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_category_title"

@@ -78,7 +78,7 @@ fun View.gone() {
 fun <T> RecyclerView.Adapter<*>.autoNotify(
     old: List<T>,
     new: List<T>,
-    compare: (T, T, Int) -> Boolean
+    compare: (T, T, Int) -> Boolean,
 ) {
     val diffCallback = object : DiffUtil.Callback() {
         override fun getOldListSize(): Int {
@@ -102,4 +102,8 @@ fun <T> RecyclerView.Adapter<*>.autoNotify(
 
     val diff = DiffUtil.calculateDiff(diffCallback)
     diff.dispatchUpdatesTo(this)
+}
+
+fun String.getFirstChar() : String {
+    return take(1)
 }
