@@ -154,7 +154,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun onLoadingHeadline(visible: Boolean) {
-        if (visible) binding.parentHeadline.visible()
+        if (visible) {
+            headlineAdapter.clear()
+            binding.parentHeadline.visible()
+        }
 
         binding.pbLoading.isVisible = visible
         binding.rvTopHeadline.isVisible = !visible
