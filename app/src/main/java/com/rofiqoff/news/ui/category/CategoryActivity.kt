@@ -17,6 +17,7 @@ import com.rofiqoff.news.ui.detail.DetailActivity
 import com.rofiqoff.news.ui.search.SearchActivity
 import com.rofiqoff.news.utils.LinearItemDecoration
 import com.rofiqoff.news.utils.getDimensInt
+import com.rofiqoff.news.utils.gone
 import com.rofiqoff.news.utils.invisible
 import com.rofiqoff.news.utils.reObserve
 import com.rofiqoff.news.utils.visible
@@ -99,6 +100,8 @@ class CategoryActivity : BaseActivity<ActivityCategoryBinding>() {
                 is NewsResponse.Error -> {
                     onLoading(false)
                     Toast.makeText(this, result.message, Toast.LENGTH_SHORT).show()
+
+                    binding.tvNoData.visible()
                 }
                 is NewsResponse.Success -> onSuccess(result.data)
             }
@@ -106,6 +109,8 @@ class CategoryActivity : BaseActivity<ActivityCategoryBinding>() {
     }
 
     private fun onLoading(show: Boolean) {
+        if (show) binding.tvNoData.gone()
+
         if (nextPage == 1) listAdapter.clear()
 
         binding.pbLoading.isVisible = show && nextPage == 1
@@ -115,6 +120,8 @@ class CategoryActivity : BaseActivity<ActivityCategoryBinding>() {
     }
 
     private fun onSuccess(data: List<Article>) {
+        binding.tvNoData.isVisible = data.isEmpty()
+
         onLoading(false)
         listAdapter.pushItems(data)
     }

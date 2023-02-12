@@ -54,25 +54,27 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_headline_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="@dimen/dimens_16dp"
-                    android:paddingTop="10dp"
-                    android:text="@string/label_title_headline"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
                 <RelativeLayout
+                    android:id="@+id/parent_headline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_headline_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/dimens_16dp"
+                        android:paddingTop="10dp"
+                        android:text="@string/label_title_headline"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <ProgressBar
                         android:id="@+id/pb_loading"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_headline_title"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="50dp"
                         android:visibility="gone"
@@ -82,6 +84,7 @@
                         android:id="@+id/rv_top_headline"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_headline_title"
                         android:nestedScrollingEnabled="true"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -118,6 +121,17 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="50dp"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_no_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="50dp"
+                        android:text="@string/label_no_data"
+                        android:textSize="16sp"
                         android:visibility="gone"
                         tools:visibility="visible" />
 

@@ -69,6 +69,17 @@
                     android:visibility="gone"
                     tools:visibility="visible" />
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_no_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/label_no_data"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
             </RelativeLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>

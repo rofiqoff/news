@@ -21,6 +21,7 @@ import com.rofiqoff.news.ui.main.adapter.SourceAdapter
 import com.rofiqoff.news.ui.search.SearchActivity
 import com.rofiqoff.news.utils.LinearItemDecoration
 import com.rofiqoff.news.utils.getDimensInt
+import com.rofiqoff.news.utils.gone
 import com.rofiqoff.news.utils.invisible
 import com.rofiqoff.news.utils.reObserve
 import com.rofiqoff.news.utils.visible
@@ -144,6 +145,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 is NewsResponse.Error -> {
                     onLoadingSource(false)
                     showToast(result.message)
+
+                    binding.tvNoData.visible()
                 }
                 is NewsResponse.Success -> onSuccessSource(result.data)
             }
@@ -151,16 +154,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun onLoadingHeadline(visible: Boolean) {
+        if (visible) binding.parentHeadline.visible()
+
         binding.pbLoading.isVisible = visible
         binding.rvTopHeadline.isVisible = !visible
     }
 
     private fun onSuccessHeadline(data: List<Article>) {
+        binding.parentHeadline.isVisible = data.isNotEmpty()
         onLoadingHeadline(false)
         headlineAdapter.pushItems(data)
     }
 
     private fun onLoadingSource(show: Boolean) {
+        if (show) binding.tvNoData.gone()
+
         binding.pbLoadingSource.isVisible = show
         binding.rvSource.apply {
             if (show) invisible() else visible()
@@ -168,6 +176,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun onSuccessSource(data: List<Source>) {
+        binding.tvNoData.isVisible = data.isEmpty()
+
         onLoadingSource(false)
         sourceAdapter.pushItems(data)
     }
